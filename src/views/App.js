@@ -1,16 +1,12 @@
-import logo from './logo.svg';
-import './App.scss';
-import MyComponent from './Example/MyComponent';
-import ListTodo from './Todos/ListTodo';
-import { ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Home from './Example/Home';
-import Nav from './Nav/Nav';
-import ListUser from './User/ListUser';
-import DetailUser from './User/DetailUser';
+import "./App.scss";
+import SCADA from "./SCADA/SCADA.js";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import Nav from "./Nav/Nav";
 
 import {
-  BrowserRouter ,
+  BrowserRouter,
   Switch,
   Route,
   // Link
@@ -19,55 +15,44 @@ import {
 /**
  * 2 component: class component (focus loại này) / function component (function, arrow)
  * component của React sử dụng JSX
- * 
+ *
  */
 
-
-
-
 function App() {
-  return ( //đây cũng đc gọi là component
+  return (
     <BrowserRouter>
-    <div className="App">
-      <header className="App-header">
-        <Nav/>
-        <img src={logo} className="App-logo" alt="logo" />
-        
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/todo">
-            <ListTodo />
-          </Route>
-          <Route path="/about">
-            <MyComponent />
-          </Route>
-          <Route path="/user" exact>
-            <ListUser />
-          </Route>
-          <Route path="/user/:id">
-            <DetailUser />
-          </Route>
+      <div className="App">
+        <div className="Header">
+          <div className="container">
+            <Nav />
+          </div>
+        </div>
+        {/* ============================= END HEADER */}
+        <div className="WP-Content container">
+          <SCADA />
+          
+        </div>
+        {/* ============================= END CONTENT*/}
+        <div className="Footer">
+            <div className="container">
+            <Nav />
+            </div>
+        </div>
+        {/* ============================= END FOOTER*/}
 
-        </Switch>
-
-
-      </header>
-      <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <ToastContainer />
-    </div>
-
+      </div>
     </BrowserRouter>
   );
 }

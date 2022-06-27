@@ -1,27 +1,31 @@
 /* Add a black background color to the top navigation */
+@font-face {
+  src: url(../../assets/font/Font_ic/iCielBCCubano-Normal.otf);
+  font-family: 'Cubano';}
+
 .topnav {
-    background-color:grey;
+    background-color: #d9263c;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
   }
   
   /* Style the links inside the navigation bar */
   .topnav a {
-    float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 40px;
+  }
+
+  .topnav{
+      .school-name{
+        font-family: 'Cubano';
+
+        p{
+          margin: 0px;
+        }
+      }
   }
   
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
   
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
